@@ -13,8 +13,7 @@ An extremely compact library for sending Ethereum.
 * `rpc` - An instance of a `web3` or compatible rpc client.
 * `to` - The destination address.  This should be a properly formatted Ethereum address, with leading `0x`
   * Example: `0xd2f4668D0e752e95a8CE01014233458471DDbA4B`
-* `value` - The value to send, in wei.  This should be either a `String`, a `Number`, or a [`BigNumber`](https://github.com/MikeMcl/bignumber.js/)
-  * If this is a string, it should be converted to hexadecimal (base 16) and have a leading `0x`
+* `value` - The value to send, in wei.  This should be a `String`.  The underlying number should be converted to hexadecimal (base 16) and have a leading `0x`
 * `options` - A hash of extra options for the transaction.
   * `options.gas` - The default amount of gas to send with the transaction.  For a simple send, this defaults to `21000`
   * `options.gasPrice` - The default price to pay for gas.  When using Mist or MetaMask, the user should have the option of overriding this.
@@ -33,7 +32,7 @@ const ETHER = new BigNumber("1000000000000000000");
 ethSend(
   web3,
   '0xd2f4668D0e752e95a8CE01014233458471DDbA4B',
-  new BigNumber('0.5')).times(ETHER).floor(),
+  ['0x', new BigNumber('0.5').times(ETHER).floor().toStringn(16)].join(''),
   {
     gas: '21000',
     gasPrice: '1000000000',

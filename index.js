@@ -65,11 +65,10 @@ function waitForTransaction(rpc, txid) {
  * the transaction.
  *
  * @param  {web3} rpc       An rpc provider, such as `web3` or `ethjs-rpc`
- * @param  {Address} to     The destination account address.  Should always
+ * @param  {String} to      The destination account address.  Should always
  *                          be a string with a leading `0x`
- * @param  {mixed} value    The value, in wei, to send.  If this is a string,
- *                          it should be in base 16 with a leading `0x`.
- *                          Otherwise, this should be a `Number` or a `BigNumber`
+ * @param  {String} value   The value, in wei, to send.  As a string, it should
+ *                          be in base 16 with a leading `0x`.
  * @param  {Object} options Additional options for customization:
  * @param  {String} options.gas            Default amount of gas to provide
  * @param  {String} options.gasPrice       Gas price to pay for the transaction

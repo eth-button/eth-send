@@ -32,7 +32,7 @@ const ETHER = new BigNumber("1000000000000000000");
 ethSend(
   web3,
   '0xd2f4668D0e752e95a8CE01014233458471DDbA4B',
-  ['0x', new BigNumber('0.5').times(ETHER).floor().toStringn(16)].join(''),
+  ['0x', new BigNumber('0.5').times(ETHER).floor().toString(16)].join(''),
   {
     gas: '21000',
     gasPrice: '1000000000',
